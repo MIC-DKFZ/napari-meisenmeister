@@ -1,0 +1,12 @@
+name: napari-meisenmeister
+display_name: MeisenMeister
+visibility: public
+categories: ["Segmentation", "Measurement", "Annotation"]
+contributions:
+  commands:
+    - id: napari-meisenmeister.MeisenMeisterWidget
+      python_name: napari_meisenmeister:MeisenMeisterWidget
+      title: Open MeisenMeister
+  widgets:
+    - command: napari-meisenmeister.MeisenMeisterWidget
+      display_name: MeisenMeister

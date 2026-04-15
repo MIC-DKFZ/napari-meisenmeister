@@ -1,0 +1,64 @@
+[project]
+name = "napari-meisenmeister"
+dynamic = ["version"]
+description = "MeisenMeister bilateral breast MRI classification plugin for napari"
+readme = "README.md"
+license = {file = "LICENSE"}
+authors = [
+  { name = "Benjamin Hamm", email = "benjamin.hamm@dkfz-heidelberg.de" }
+]
+classifiers = [
+    "Development Status :: 2 - Pre-Alpha",
+    "Framework :: napari",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Medical Science Apps.",
+]
+requires-python = ">=3.10"
+dependencies = [
+    "numpy",
+    "qtpy",
+    "napari[all]",
+    "napari-nifti",
+    "SimpleITK",
+    "huggingface_hub",
+    "meisenmeister @ git+https://github.com/MIC-DKFZ/MeisenMeister.git",
+]
+
+[project.entry-points."napari.manifest"]
+napari-meisenmeister = "napari_meisenmeister:napari.yaml"
+
+[build-system]
+requires = ["setuptools>=42.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+"*" = ["*.yaml"]
+
+[project.urls]
+Homepage = "https://github.com/MIC-DKFZ/napari-meisenmeister"
+Code = "https://github.com/MIC-DKFZ/napari-meisenmeister"
+
+[tool.setuptools.dynamic]
+version = {attr = "napari_meisenmeister.__init__.__version__"}
+
+[tool.black]
+line-length = 100
+target-version = ['py310']
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
