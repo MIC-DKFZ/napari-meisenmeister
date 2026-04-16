@@ -25,8 +25,8 @@ def _pretty_class_name(label_name: str) -> str:
 
 
 SIDE_COLORS = {
-    "left": "#4a7bb7",
-    "right": "#d37a45",
+    "left": "#d37a45",
+    "right": "#4a7bb7",
 }
 
 
@@ -361,10 +361,8 @@ class MeisenMeisterGUI(QWidget):
 
     def populate_results(self, probability_payload: dict[str, dict[str, float]]) -> None:
         self.clear_results()
-        swap = {"left": "right", "right": "left"}
-        corrected = {swap.get(k, k): v for k, v in probability_payload.items()}
         self.results_layout.addStretch()
-        for side_name, probabilities in sorted(corrected.items()):
+        for side_name, probabilities in sorted(probability_payload.items()):
             self.results_layout.addWidget(ProbabilityCard(side_name, probabilities))
         self.results_layout.addStretch()
         self.results_placeholder.hide()
