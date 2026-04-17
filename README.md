@@ -2,9 +2,9 @@
 
 ![UI](images/UI.png)
 
-`napari-meisenmeister` brings the MeisenMeister bilateral breast MRI classifier into napari.
+`napari-meisenmeister` brings the MeisenMeister bilateral breast DCE-MRI classifier into napari.
 
-The widget is built for the MeisenMeister `v1` portable model layout and expects three volumetric inputs per case:
+The widget is built for the MeisenMeister `v1` portable model layout and expects three co-registered 3D volumes per case — one pre-contrast scan and two post-contrast timepoints from a dynamic contrast-enhanced study:
 
 - `pre`
 - `post1`
@@ -41,8 +41,8 @@ napari -w napari-meisenmeister
 
 Then:
 
-1. Open your three image volumes in napari.
-2. Assign three distinct image layers to `pre`, `post1`, and `post2`.
+1. Drag the three 3D DCE-MRI volumes into napari.
+2. Assign the image layers to `pre`, `post1`, and `post2` in the widget.
 3. Click `Classify`.
 4. On the first run, the plugin downloads the default MeisenMeister `v1` model automatically.
 5. Review the generated label layers and the left/right probability cards in the widget.
