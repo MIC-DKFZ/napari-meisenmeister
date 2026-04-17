@@ -1,5 +1,7 @@
 # napari-meisenmeister
 
+![UI](images/UI.png)
+
 `napari-meisenmeister` brings the MeisenMeister bilateral breast MRI classifier into napari.
 
 The widget is built for the MeisenMeister `v1` portable model layout and expects three volumetric inputs per case:
