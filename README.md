@@ -4,6 +4,8 @@
 
 `napari-meisenmeister` brings the MeisenMeister bilateral breast DCE-MRI classifier into napari.
 
+MeisenMeister was used for the winning solution of the [MICCAI 2025 ODELIA Breast MRI Challenge](https://odelia2025.grand-challenge.org/). The upstream framework lives at [MIC-DKFZ/MeisenMeister](https://github.com/MIC-DKFZ/MeisenMeister); this plugin wraps its portable inference mode for interactive use in napari.
+
 The widget is built for the MeisenMeister `v1` portable model layout and expects three co-registered 3D volumes per case — one pre-contrast scan and two post-contrast timepoints from a dynamic contrast-enhanced study:
 
 - `pre`
@@ -57,4 +59,36 @@ If you already have a local model folder, you can still paste or browse to it ma
 
 ## License
 
-This repository is licensed under Apache-2.0. MeisenMeister model weights follow the Hugging Face model card license terms.
+This repository is licensed under Apache-2.0. MeisenMeister model weights follow the Hugging Face model card license terms (CC BY-NC-SA 4.0).
+
+## Citation
+
+If you use this plugin in research, please cite the MeisenMeister paper:
+
+```
+Hamm, B., Kirchhoff, Y., Rokuss, M., and Maier-Hein, K.,
+MeisenMeister: A Simple Two Stage Pipeline for Breast Cancer Classification on MRI,
+arXiv:2510.27326 [cs.CV], 2025.
+```
+
+```bibtex
+@article{hamm2025meisenmeister,
+  title={MeisenMeister: A Simple Two Stage Pipeline for Breast Cancer Classification on MRI},
+  author={Hamm, Benjamin and Kirchhoff, Yannick and Rokuss, Maximilian and Maier-Hein, Klaus},
+  journal={arXiv preprint arXiv:2510.27326},
+  year={2025}
+}
+```
+
+Paper: https://arxiv.org/pdf/2510.27326
+
+The under-the-hood breast segmentation relies on BreastDivider:
+
+```bibtex
+@article{rokuss2025breastdivider,
+  title     = {Divide and Conquer: A Large-Scale Dataset and Model for Left-Right Breast MRI Segmentation},
+  author    = {Rokuss, Maximilian and Hamm, Benjamin and Kirchhoff, Yannick and Maier-Hein, Klaus},
+  journal   = {arXiv preprint arXiv:2507.13830},
+  year      = {2025}
+}
+```
